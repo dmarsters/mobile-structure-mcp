@@ -1,0 +1,37 @@
+[project]
+name = "mobile-sculpture-mcp"
+version = "2.0.0"
+description = "Mobile sculpture aesthetics MCP server with Phase 2.6 rhythmic composition and Phase 2.7 attractor visualization"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Dal Marsters" }]
+keywords = [
+    "mcp",
+    "mobile-sculpture",
+    "kinetic-art",
+    "calder",
+    "aesthetic-dynamics",
+    "lushy",
+]
+dependencies = [
+    "fastmcp>=2.0",
+    "numpy>=1.24",
+]
+
+[project.scripts]
+mobile-sculpture-mcp = "mobile_sculpture_mcp:mcp.run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
